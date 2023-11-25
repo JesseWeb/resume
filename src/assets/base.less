@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   font-weight: normal;
+   text-decoration: none;
+}
+svg {
+   height: 1em;
+   width: 1em;
+}
+html{
+   overflow: hidden;
+}
+body {
+   overflow: hidden;
+   min-height: 100vh;
+   color: var(--text-color);
+   background: var(--container-color);
+   transition:
+      color 0.5s,
+      background-color 0.5s;
+   line-height: 1.6;
+   font-family:
+      Inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      sans-serif;
+   font-size: 15px;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+#app {
+   background-color: var(--container-color);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100vw;
+}
+.btn-primary {
+   height: 3rem;
+   width: 10rem;
+   border: none;
+   border-radius: 0.3rem;
+   background: var(--first-color);
+   color: var(--input-color);
+   align-self: flex-start;
+   margin-top: 2rem;
+   display: flex;
+   gap: 0.5rem;
+   justify-content: center;
+   align-items: center;
+   font-size: 0.8rem;
+   cursor: pointer;
+   &:active {
+      background: var(--first-color-alt);
+   }
+   > .text {
+      font-weight: 700;
+   }
+}
+.wrapper-title {
+   text-align: center;
+   .title {
+      font-size: var(--big-font-size);
+      font-weight: 600;
+      color: var(--title-color);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      margin-bottom: 0;
+   }
+   .sub-title {
+      font-size: var(--normal-font-size);
+      font-weight: 400;
+      color: var(--text-color);
+   }
+}
+::-webkit-scrollbar-thumb{
+   background: var(--scroll-thumb-color);
+   border-radius: 0.5rem;
+}
+::-webkit-scrollbar {
+   width: 0.2rem;
+}
+::-webkit-scrollbar-track {
+   background: var(--scroll-bar-color);
+}
