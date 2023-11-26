@@ -31,7 +31,9 @@ const emits = defineEmits(['changeStatus'])
          </div>
       </div>
       <div class="content" :class="{ show: isShow }">
-         <slot name="default"></slot>
+         <div class="inner">
+            <slot name="default"></slot>
+         </div>
       </div>
    </div>
 </template>
@@ -70,14 +72,18 @@ const emits = defineEmits(['changeStatus'])
 .collapse-item {
    width: 100%;
    .content {
+      display: grid;
+      grid-template-rows: 0fr;
       padding-left: 3rem;
-      height: 0;
       overflow: hidden;
       transition: all 0.3s ease-in-out;
       &.show {
+         grid-template-rows: 1fr;
          padding-top: 3rem;
          padding-bottom: 1rem;
-         height: auto;
+      }
+      .inner{
+         overflow: hidden;
       }
    }
 }
