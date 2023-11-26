@@ -8,6 +8,8 @@
       "paths": {
          "@/*": ["./src/*"]
       },
-      "types": ["vite-svg-loader", "vite/client"]
+      "types": ["vite-svg-loader", "vite/client"],
+      "typeRoots": ["@types", "./src/types"],
+      "noImplicitAny": false
    }
 }

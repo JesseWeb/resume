@@ -7,6 +7,7 @@ import Qualifications from '@/components/Qualifications/Qualifications.vue'
 import Portfolio from '@/components/Portfolio/Portfolio.vue'
 import ContactMe from '@/components/ContactMe/ContactMe.vue'
 import ArrowUpIcon from '@/assets/svgs/ArrowUpIcon.vue'
+import { debounce } from 'lodash'
 import { ref } from 'vue'
 let status = ref('home')
 function onScroll(e: any) {
@@ -50,10 +51,11 @@ function onScroll(e: any) {
       status.value = 'home'
    }
 }
+const onScrollDebounce = debounce(onScroll, 100)
 </script>
 
 <template>
-   <main class="main-view" @scroll="onScroll">
+   <main class="main-view" @scroll="onScrollDebounce">
       <NavBar @changeStatus="status = $event" :status="status" />
       <Profile />
       <AboutMe />
