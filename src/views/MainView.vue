@@ -103,13 +103,13 @@ const onScrollDebounce = debounce(onScroll, 100)
    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < 768px) {
    .main-view {
       padding-left: 2rem;
       padding-right: 2rem;
    }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (width >= 1024px) {
    .main-view {
       padding: 0 10rem;
    }

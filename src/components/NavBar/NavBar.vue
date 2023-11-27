@@ -125,7 +125,7 @@ function handleNavClick(item: NavStatus) {
       }
    }
 }
-@media screen and (max-width: 768px) {
+@media screen and (width < 768px) {
    .nav {
       height: 12rem;
       padding-top: 2rem;

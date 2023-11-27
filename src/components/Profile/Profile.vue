@@ -104,9 +104,8 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       color: var(--text-color);
    }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (width >=1024px) {
    .container {
-      padding-top: 10rem;
       .scroll-down {
          display: flex;
       }
@@ -118,17 +117,16 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       width: 18rem;
    }
 }
-@media screen and (min-width: 568px) {
-   .container{
+@media screen and (width >= 568px) {
+   .container {
       padding-top: 10rem;
    }
 }
-@media screen and (max-width: 568px) {
+@media screen and (width < 568px) {
    .container {
-      padding-top: 2rem;
       padding-left: 0;
       .wrapper-content {
-         gap: 5rem;
+         gap: 2rem;
          grid-template-columns: 1fr;
          .profile {
             grid-row: 1;

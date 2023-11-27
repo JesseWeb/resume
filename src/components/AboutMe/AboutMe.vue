@@ -115,7 +115,7 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
    }
 }
-@media screen and (max-width: 568px) {
+@media screen and (width < 568px) {
    .container .wrapper-btn {
       width: 100%;
       display: flex;
@@ -125,13 +125,13 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
       grid-template-columns: 1fr;
    }
 }
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
    .container {
       padding-top: 5rem;
    }
    
 }
-@media screen and (min-width: 1024px) {
+@media screen and (width >= 1024px) {
    .container .profile-img {
       width: 20rem;
    }

@@ -98,7 +98,7 @@ const workExperience = [
       max-width: 25rem;
    }
 }
-@media screen and (max-width: 568px) {
+@media screen and (width < 568px) {
    .container {
       margin-top: 6rem;
       .wrapper-timeline {
@@ -107,13 +107,13 @@ const workExperience = [
       }
    }
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (width < 1024px) and (width >= 768px) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;
    }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (width >= 1024px) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;
