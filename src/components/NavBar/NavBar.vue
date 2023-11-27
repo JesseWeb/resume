@@ -12,7 +12,7 @@ defineProps({
 })
 let showNavs = ref(false)
 let resizeEventListener = () => {
-   if (document.body.clientWidth > 768) {
+   if (document.body.clientWidth >= 768) {
       showNavs.value = false
    }
 }
@@ -31,6 +31,9 @@ enum NavStatus {
 const eimits = defineEmits(['changeStatus'])
 
 function handleNavClick(item: NavStatus) {
+   if(document.body.clientWidth < 768) {
+      showNavs.value = false
+   }
    eimits('changeStatus', item)
 }
 const isDarkMode = ref(false)
