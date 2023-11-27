@@ -2,6 +2,8 @@
 import { onUnmounted, ref } from 'vue'
 import CloseIcon from '@/assets/svgs/CloseIcon.vue'
 import NavIcon from '@/assets/svgs/NavIcon.vue'
+import MoonIcon from '@/assets/svgs/MoonIcon.vue'
+import SunIcon from '@/assets/svgs/SunIcon.vue'
 defineProps({
    status: {
       type: String,
@@ -31,6 +33,11 @@ const eimits = defineEmits(['changeStatus'])
 function handleNavClick(item: NavStatus) {
    eimits('changeStatus', item)
 }
+const isDarkMode = ref(false)
+function toggleDarkThemeMode() {
+   isDarkMode.value = !isDarkMode.value
+   document.body.classList.toggle('dark-theme')
+}
 </script>
 <template>
    <div class="nav" :class="{ show: showNavs }">
@@ -45,16 +52,32 @@ function handleNavClick(item: NavStatus) {
             @click="handleNavClick(item)"
             >{{ $t(item) }}</a
          >
+         <MoonIcon @click="toggleDarkThemeMode" v-if="!isDarkMode" class="dark-mode-btn icon-btn" />
+         <SunIcon @click="toggleDarkThemeMode" v-else class="dark-mode-btn icon-btn" />
       </div>
-      <CloseIcon class="close-nav-btn" @click="showNavs = !showNavs" />
+      <CloseIcon class="close-nav-btn icon-btn" @click="showNavs = !showNavs" />
    </div>
    <div class="visible-control" v-if="!showNavs">
       <div class="nav-title">{{ $t('name') }}</div>
-      <NavIcon @click="showNavs = !showNavs" class="open-nav-btn" />
+      <div class="wrapper-funcs">
+         <NavIcon @click="showNavs = !showNavs" class="open-nav-btn icon-btn" />
+         <MoonIcon @click="toggleDarkThemeMode" v-if="!isDarkMode" class="dark-mode-btn icon-btn" />
+         <SunIcon @click="toggleDarkThemeMode" v-else class="dark-mode-btn icon-btn" />
+      </div>
    </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
+.icon-btn {
+   fill: var(--text-color);
+}
+.icon-btn:hover {
+   fill: var(--first-color);
+}
+.dark-mode-btn {
+   font-size: 1.4rem;
+   cursor: pointer;
+}
 .nav {
    background: var(--container-color);
    z-index: 100;
@@ -116,6 +139,10 @@ function handleNavClick(item: NavStatus) {
    padding: 1rem 2rem;
    box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.2);
    background-color: var(--container-color);
+   .wrapper-funcs {
+      display: flex;
+      gap: 1rem;
+   }
    .open-nav-btn {
       font-size: 1.4rem;
       color: var(--text-color);
@@ -126,6 +153,9 @@ function handleNavClick(item: NavStatus) {
    }
 }
 @media screen and (width < 768px) {
+   .nav-items .dark-mode-btn{
+      display: none;
+   }
    .nav {
       height: 12rem;
       padding-top: 2rem;

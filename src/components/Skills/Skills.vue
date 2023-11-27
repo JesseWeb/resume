@@ -114,7 +114,7 @@ const openingCollapse = ref('')
       width: 100%;
       display: grid;
       gap: 2rem;
-      grid-template-columns: repeat(2, minmax(16rem, 1fr));
+      grid-template-columns: repeat(2, minmax(14.5rem, 1fr));
       .collapse-item {
          margin-bottom: 2rem;
       }

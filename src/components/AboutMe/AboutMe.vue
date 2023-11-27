@@ -38,7 +38,7 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
                <a class="btn-primary" href="www.baidu.com" target="_blank">
                   <div class="text">{{ $t('downloadCV') }}</div>
                   <DownloadIcon
-                     style="fill: var(--input-color); font-size: 1rem; font-weight: 800"
+                     style="fill: #fff; font-size: 1rem; font-weight: 800"
                   />
                </a>
             </div>

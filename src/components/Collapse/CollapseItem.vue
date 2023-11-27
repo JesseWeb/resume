@@ -11,10 +11,7 @@ const emits = defineEmits(['changeStatus'])
 </script>
 <template>
    <div class="collapse-item">
-      <div
-         class="wrapper-collapse-title"
-         @click="emits('changeStatus', !isShow)"
-      >
+      <div class="wrapper-collapse-title" @click="emits('changeStatus', !isShow)">
          <div class="main-icon">
             <slot name="icon"></slot>
          </div>
@@ -42,20 +39,24 @@ const emits = defineEmits(['changeStatus'])
    display: flex;
    justify-content: space-between;
    gap: 1rem;
-   align-items: center;
 
    .main-icon {
       width: 2rem;
    }
    .wrapper-text {
+      user-select: none;
+         -webkit-user-select: none;
+
       flex: calc(100% - 6rem) 0 0;
       text-align: left;
       .text {
+         line-height: 1;
          font-size: var(--h3-font-size);
          font-weight: 800;
          color: var(--title-color);
       }
       .sub-title {
+        
          font-size: var(--small-font-size);
          color: var(--text-color);
       }
@@ -64,12 +65,14 @@ const emits = defineEmits(['changeStatus'])
       cursor: pointer;
       width: 2rem;
       height: 100%;
-      display: flex; 
+      display: flex;
       justify-content: center;
       align-items: center;
    }
 }
 .collapse-item {
+   user-select: none;
+   cursor: pointer;
    width: 100%;
    .content {
       display: grid;
@@ -82,7 +85,7 @@ const emits = defineEmits(['changeStatus'])
          padding-top: 3rem;
          padding-bottom: 1rem;
       }
-      .inner{
+      .inner {
          overflow: hidden;
       }
    }

@@ -16,7 +16,7 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
             <div class="desc">{{ $t('selfIntroduction') }}</div>
             <a class="btn-primary" href="mailto:legendaryjesse@icloud.com">
                <div class="text">{{ $t('contactMe') }}</div>
-               <ContactIcon style="fill: var(--input-color)" />
+               <ContactIcon style="fill: #fff" />
             </a>
          </div>
          <div class="profile">
@@ -88,8 +88,8 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
          color: var(--title-color);
       }
       .sub-title {
-         font-size: 1.5rem;
-         font-weight: 500;
+         font-size: var(--h3-font-size);
+         font-weight: var(--font-medium);
          color: var(--text-color);
       }
    }

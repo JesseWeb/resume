@@ -64,7 +64,7 @@ const onScrollDebounce = debounce(onScroll, 100)
       <Portfolio />
       <ContactMe />
       <a class="go-top" v-if="status !== 'home'" href="#home">
-         <ArrowUpIcon style="fill: var(--input-color)" />
+         <ArrowUpIcon style="fill: #fff" />
       </a>
    </main>
 </template>
