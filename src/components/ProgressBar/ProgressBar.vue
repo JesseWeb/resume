@@ -29,13 +29,27 @@ const width = computed(() => {
    flex-direction: column;
    width: 100%;
    flex: 1;
+   &:hover .desc .name {
+      background-size: 100% 0.2rem;
+   }
    .desc {
       display: flex;
       justify-content: space-between;
       .name {
+         padding-bottom: 0.1rem;
+         display: inline;
          font-size: var(--normal-font-size);
          font-weight: 400;
          color: var(--title-color);
+         background-image: linear-gradient(
+            to right,
+            var(--first-color-lighter),
+            var(--first-color)
+         );
+         background-size: 0 0.2rem;
+         background-repeat: no-repeat;
+         background-position: 0 100%;
+         transition: 0.3s all ease-in-out;
       }
       .count {
          font-size: var(--normal-font-size);
