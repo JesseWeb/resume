@@ -1,6 +1,6 @@
-# .
+# URL are not available currently(it just not depoly to server yet). 
 
-This template should help get you started developing with Vue 3 in Vite.
+This website only for resume of myself. with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
