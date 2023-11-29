@@ -155,7 +155,7 @@ function toggleDarkThemeMode() {
       }
    }
 }
-@media screen and (width < 768px) {
+@media screen and (width < 48em) {
    .nav-items .dark-mode-btn{
       display: none;
    }

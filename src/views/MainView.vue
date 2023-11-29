@@ -84,9 +84,10 @@ const onScrollDebounce = debounce(onScroll, 100)
 }
 .go-top {
    font-size: 1.2rem;
-   position: fixed;
+   position: sticky;
    bottom: 5rem;
-   right: 1.8rem;
+   margin-left: auto;
+   margin-right: 1.8rem;
    z-index: 100;
    background-color: var(--first-color);
    color: var(--text-color-light);
@@ -103,13 +104,13 @@ const onScrollDebounce = debounce(onScroll, 100)
    }
 }
 
-@media screen and (width < 768px) {
+@media screen and (width < 45em) {
    .main-view {
       padding-left: 2rem;
       padding-right: 2rem;
    }
 }
-@media screen and (width >= 1024px) {
+@media screen and (width >= 75em) {
    .main-view {
       padding: 0 10rem;
    }

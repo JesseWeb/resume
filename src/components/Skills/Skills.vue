@@ -123,7 +123,7 @@ const openingCollapse = ref('')
       margin-bottom: 1rem;
    }
 }
-@media screen and (width < 568px) {
+@media screen and (width < 35.5em) {
    .container {
       margin-top: 6rem;
       .collapses {
@@ -131,7 +131,7 @@ const openingCollapse = ref('')
       }
    }
 }
-@media screen and (width < 1024px) and (width >= 768px) {
+@media screen and (width < 75em) and (width >= 48em) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;
@@ -140,7 +140,7 @@ const openingCollapse = ref('')
       }
    }
 }
-@media screen and (width >= 1024px) {
+@media screen and (width >= 75em) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;

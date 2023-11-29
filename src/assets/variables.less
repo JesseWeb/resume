@@ -17,8 +17,8 @@
    --progress-bg-color: var(--first-color-lighter);
    --body-color: hsl(250, 60%, 99%);
    --container-color: #fff;
-   --scroll-bar-color: hsl(250, 12%, 90%);
-   --scroll-thumb-color: hsl(250, 12%, 80%);
+   --scroll-bar-color: var(--container-color);
+   --scroll-thumb-color: hsl(250, 50%, 60%);
    --border-color: hsl(250, 12%, 90%);
    /*========== Font and typography ==========*/
    --body-font: 'Poppins', sans-serif;
@@ -54,7 +54,7 @@
 }
 
 /* Font size for large devices */
-@media screen and (width >= 1024px) {
+@media screen and (width >= 75em) {
    :root {
       --big-font-size: 3rem;
       --h1-font-size: 2.25rem;
@@ -67,23 +67,26 @@
 }
 
 /*========== Variables Dark theme ==========*/
-@media (prefers-color-scheme: dark) {
-   :root {
-      --body-color: hsl(250, 29%, 16%);
-      --first-second: hsl(250, 30%, 8%);
-      --title-color: hsl(250, 8%, 95%);
-      --text-color: hsl(250, 8%, 750%);
-      --input-color: hsl(250, 29%, 16%);
-      --border-color: hsl(250, 12%, 48%);
-      --container-color: hsl(250, 64%, 6%);
-      --progress-bg-color: hsl(250, 85%, 85%);
-   }
-}
+// @media (prefers-color-scheme: dark) {
+//    :root {
+//       --body-color: hsl(250, 29%, 16%);
+//       --first-second: hsl(250, 30%, 8%);
+
+//         --scroll-bar-color: hsl(250, 12%, 48%);
+//         --scroll-thumb-color: hsl(250, 12%, 36%);
+//       --title-color: hsl(250, 8%, 95%);
+//       --text-color: hsl(250, 8%, 750%);
+//       --input-color: hsl(250, 29%, 16%);
+//       --border-color: hsl(250, 12%, 48%);
+//       --container-color: hsl(250, 64%, 6%);
+//       --progress-bg-color: hsl(250, 85%, 85%);
+//    }
+// }
 body.dark-theme {
    --body-color: hsl(250, 63%, 3%);
    --container-color: hsl(250, 64%, 6%);
-   --scroll-bar-color: hsl(250, 12%, 48%);
-   --scroll-thumb-color: hsl(250, 12%, 36%);
+   --scroll-bar-color: var(--container-color);
+   --scroll-thumb-color: hsl(250, 50%, 60%);
    --title-color: hsl(250, 100%, 100%);
    --input-color: hsl(250, 29%, 16%);
    --border-color: hsl(250, 12%, 48%);

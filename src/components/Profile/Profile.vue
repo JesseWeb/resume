@@ -104,7 +104,7 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       color: var(--text-color);
    }
 }
-@media screen and (width >=1024px) {
+@media screen and (width >=75em) {
    .container {
       .scroll-down {
          display: flex;
@@ -117,12 +117,12 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       width: 18rem;
    }
 }
-@media screen and (width >= 568px) {
+@media screen and (width >= 35.5em) {
    .container {
       padding-top: 10rem;
    }
 }
-@media screen and (width < 568px) {
+@media screen and (width < 35.5em) {
    .container {
       padding-left: 0;
       .wrapper-content {

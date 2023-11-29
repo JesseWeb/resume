@@ -10,11 +10,17 @@ import en from './locales/en-US.json'
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import { VTimeline, VTimelineItem } from 'vuetify/components'
+import { VTimeline, VTimelineItem, VCarousel, VCarouselItem } from 'vuetify/components'
+import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 const vuetify = createVuetify({
+   icons: {
+      defaultSet: 'mdi' // This is already the default value - only for display purposes
+   },
    components: {
       VTimeline,
-      VTimelineItem
+      VTimelineItem,
+      VCarousel,
+      VCarouselItem
    }
 })
 

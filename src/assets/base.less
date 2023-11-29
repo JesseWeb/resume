@@ -10,7 +10,7 @@ svg {
    height: 1em;
    width: 1em;
 }
-html{
+html {
    overflow: hidden;
 }
 body {
@@ -35,7 +35,7 @@ body {
       'Droid Sans',
       'Helvetica Neue',
       sans-serif;
-   font-size: 15px;
+   font-size: 16px;
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -85,13 +85,20 @@ body {
       color: var(--text-color);
    }
 }
-::-webkit-scrollbar-thumb{
-   background: var(--scroll-thumb-color);
+img{
+   border: none;
+   max-width: 100%;
+   height: auto;
+   display: block;
+   
+}
+main::-webkit-scrollbar-thumb {
+   background-color: var(--scroll-thumb-color);
    border-radius: 0.5rem;
 }
-::-webkit-scrollbar {
-   width: 0.2rem;
+main::-webkit-scrollbar {
+   width: 0.5rem;
 }
-::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
    background: var(--scroll-bar-color);
 }

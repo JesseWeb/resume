@@ -1,4 +1,27 @@
 <script setup lang="ts">
+import ContactIcon from '@/assets/svgs/ContactIcon.vue'
+import ArrowLeftIcon from '@/assets/svgs/ArrowLeftIcon.vue'
+import ArrowRightIcon from '@/assets/svgs/ArrowRightIcon.vue'
+const slides = [
+   {
+      img: 'https://img.picgo.net/2023/11/28/Screenshot-2023-11-28-at-11.15.57PM96623a377ea24d4d.png',
+      title: '烘豆曲线大师',
+      desc: '小程序, 用于手动记录烘豆的温度曲线, 曲线分享。',
+      demoUrl: ''
+   },
+   {
+      img: '',
+      title: '小程序b',
+      desc: '',
+      demoUrl: ''
+   },
+   {
+      img: '',
+      title: '小程序c',
+      desc: '',
+      demoUrl: ''
+   }
+]
 </script>
 <template>
    <div id="portfolio" class="container">
@@ -10,6 +33,42 @@
             {{ $t(`mostRecentWork`) }}
          </div>
       </div>
+
+      <v-carousel
+         class="carousel"
+         color="var(--first-color)"
+         height="20rem"
+         show-arrows="hover"
+         hide-delimiter-background
+      >
+         <template v-slot:prev="{ props }">
+            <ArrowLeftIcon
+               @click="props.onClick"
+               style="fill: var(--first-color); cursor: pointer; font-size: var(--h1-font-size)"
+            />
+         </template>
+         <template v-slot:next="{ props }">
+            <ArrowRightIcon
+               @click="props.onClick"
+               style="fill: var(--first-color); cursor: pointer; font-size: var(--h1-font-size)"
+            />
+         </template>
+         <v-carousel-item v-for="(slide, i) in slides" :key="i">
+            <div class="carousel-item">
+               <div class="left">
+                  <img :src="slide.img" :alt="slide.title" />
+               </div>
+               <div class="right">
+                  <div class="title">{{ slide.title }}</div>
+                  <div class="desc">{{ slide.desc }}</div>
+                  <a class="btn-primary">
+                     <div class="text">Demo</div>
+                     <ContactIcon style="fill: #fff" />
+                  </a>
+               </div>
+            </div>
+         </v-carousel-item>
+      </v-carousel>
    </div>
 </template>
 <style lang="less" scoped>
@@ -23,19 +82,54 @@
       font-size: var(--small-font-size);
       color: var(--text-color-light);
    }
+   .carousel {
+   }
+   .carousel-item {
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 20rem;
+      gap: 2rem;
+      grid-template-rows: 10rem;
+
+      .left {
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit:contain;
+         }
+      }
+      .right {
+         .title {
+            color: var(--title-color);
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-semi-bold);
+         }
+         .desc {
+            color: var(--text-color-light);
+            font-size: var(--small-font-size);
+         }
+         .btn-primary {
+            margin-top: 0.5rem;
+         }
+      }
+   }
 }
-@media screen and (width < 568px) {
+@media screen and (width < 35.5em) {
+   .container .carousel-item {
+      grid-template-columns: 1fr;
+   }
    .container {
       margin-top: 6rem;
    }
 }
-@media screen and (width < 1024px) and (width >= 768px) {
+@media screen and (width < 75em) and (width >= 45em) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;
    }
 }
-@media screen and (width >= 1024px) {
+@media screen and (width >= 75em) {
    .container {
       margin-top: 3rem;
       padding-top: 5rem;
