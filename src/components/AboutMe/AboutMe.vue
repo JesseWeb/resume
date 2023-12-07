@@ -48,8 +48,6 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
 </template>
 <style lang="less" scoped>
 .container {
-   height: calc(100svh - 1rem);
-   padding-top: 3rem;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -109,13 +107,15 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
       }
    }
    .profile-img {
-      width: 15rem;
       aspect-ratio: 656 / 463;
       border-radius: 0.5rem;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
    }
 }
-@media screen and (width < 35.5em) {
+@media screen and (max-width: 35.5em) {
+   .container{
+      padding-top: 3rem;
+   }
    .container .wrapper-btn {
       width: 100%;
       display: flex;
@@ -125,15 +125,10 @@ import DownloadIcon from '@/assets/svgs/DownloadIcon.vue'
       grid-template-columns: 1fr;
    }
 }
-@media screen and (width >= 48em) {
-   .container {
-      padding-top: 5rem;
-   }
+// @media screen and (min-width: 48em) {
+//    .container {
+//       padding-top: 5rem;
+//    }
    
-}
-@media screen and (width >= 75em) {
-   .container .profile-img {
-      width: 20rem;
-   }
-}
+// }
 </style>

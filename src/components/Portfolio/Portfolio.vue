@@ -37,7 +37,7 @@ const slides = [
       <v-carousel
          class="carousel"
          color="var(--first-color)"
-         height="20rem"
+         height="20em"
          show-arrows="hover"
          hide-delimiter-background
       >
@@ -73,30 +73,26 @@ const slides = [
 </template>
 <style lang="less" scoped>
 .container {
-   min-height: calc(100svh - 1rem);
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-top: 3rem;
    .sub-title {
       font-size: var(--small-font-size);
       color: var(--text-color-light);
    }
-   .carousel {
-   }
    .carousel-item {
+      height: 100%;
       padding: 5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 20rem;
       gap: 2rem;
       grid-template-rows: 10rem;
-
       .left {
          img {
             width: 100%;
             height: 100%;
-            object-fit:contain;
+            object-fit: contain;
          }
       }
       .right {
@@ -115,24 +111,17 @@ const slides = [
       }
    }
 }
-@media screen and (width < 35.5em) {
+@media screen and (max-width: 35.5em) {
    .container .carousel-item {
       grid-template-columns: 1fr;
+      height: 100%;
+      padding: 3rem;
    }
    .container {
       margin-top: 6rem;
-   }
-}
-@media screen and (width < 75em) and (width >= 45em) {
-   .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
-   }
-}
-@media screen and (width >= 75em) {
-   .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
+      .carousel {
+         font-size: 1.5rem;
+      }
    }
 }
 </style>

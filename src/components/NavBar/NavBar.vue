@@ -12,7 +12,7 @@ defineProps({
 })
 let showNavs = ref(false)
 let resizeEventListener = () => {
-   if (document.body.clientWidth >= 768) {
+   if (document.body.clientWidth < 768) {
       showNavs.value = false
    }
 }
@@ -47,7 +47,7 @@ function toggleDarkThemeMode() {
       <div class="nav-title" v-if="!showNavs">{{ $t('name') }}</div>
       <div class="nav-items">
          <a
-            :href="`#${item}`"
+            :href="`#${item==='home'?'':item}`"
             class="item"
             :class="{ activated: status === item }"
             v-for="item in NavStatus"
@@ -82,6 +82,7 @@ function toggleDarkThemeMode() {
    cursor: pointer;
 }
 .nav {
+   border-bottom: 1px solid var(--border-color);
    background: var(--container-color);
    z-index: 100;
    width: 100vw;
@@ -155,7 +156,7 @@ function toggleDarkThemeMode() {
       }
    }
 }
-@media screen and (width < 48em) {
+@media screen and (max-width: 48em) {
    .nav-items .dark-mode-btn{
       display: none;
    }

@@ -53,7 +53,7 @@ const collapses = [
       ]
    }
 ]
-const openingCollapse = ref('')
+const openingCollapse = ref('frontendDeveloper')
 </script>
 <template>
    <div id="skills" class="container">
@@ -100,11 +100,10 @@ const openingCollapse = ref('')
 </template>
 <style lang="less" scoped>
 .container {
-   min-height: calc(100svh - 1rem);
+   min-width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-top: 3rem;
    .sub-title {
       font-size: var(--small-font-size);
       color: var(--text-color-light);
@@ -123,27 +122,19 @@ const openingCollapse = ref('')
       margin-bottom: 1rem;
    }
 }
-@media screen and (width < 35.5em) {
+@media screen and (max-width: 35.5em) {
    .container {
-      margin-top: 6rem;
       .collapses {
          grid-template-columns: 1fr;
       }
    }
 }
-@media screen and (width < 75em) and (width >= 48em) {
+@media screen and (max-width: 75em) and (min-width: 48em) {
    .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
+      // padding-top: 5rem;
       .collapses {
          grid-template-columns: 1fr;
       }
-   }
-}
-@media screen and (width >= 75em) {
-   .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
    }
 }
 </style>

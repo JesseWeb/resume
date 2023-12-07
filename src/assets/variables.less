@@ -7,6 +7,7 @@
 
    /* HSL color mode */
    --first-color: hsl(250, 69%, 61%);
+   --footer-bg-color: hsl(250, 69%, 61%);
    --first-color-second: hsl(250, 69%, 61%);
    --first-color-alt: hsl(250, 57%, 53%);
    --first-color-lighter: hsl(250, 92%, 85%);
@@ -54,7 +55,7 @@
 }
 
 /* Font size for large devices */
-@media screen and (width >= 75em) {
+@media screen and (min-width: 75em) {
    :root {
       --big-font-size: 3rem;
       --h1-font-size: 2.25rem;
@@ -83,8 +84,9 @@
 //    }
 // }
 body.dark-theme {
-   --body-color: hsl(250, 63%, 3%);
-   --container-color: hsl(250, 64%, 6%);
+   --body-color: hsl(250, 28%, 12%);
+   --container-color: hsl(250, 29%, 16%);
+   --first-color-second: hsl(250, 30%, 8%);
    --scroll-bar-color: var(--container-color);
    --scroll-thumb-color: hsl(250, 50%, 60%);
    --title-color: hsl(250, 100%, 100%);

@@ -87,36 +87,14 @@ const workExperience = [
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-top: 3rem;
+   ;
    padding-bottom: 2rem;
    .sub-title {
       font-size: var(--small-font-size);
       color: var(--text-color-light);
    }
    .wrapper-timeline {
-      width: 60%;
-      max-width: 25rem;
-   }
-}
-@media screen and (width < 35.5em) {
-   .container {
-      margin-top: 6rem;
-      .wrapper-timeline {
-         width: 100%;
-         max-width: 100%;
-      }
-   }
-}
-@media screen and (width < 75em) and (width >= 48em) {
-   .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
-   }
-}
-@media screen and (width >= 75em) {
-   .container {
-      margin-top: 3rem;
-      padding-top: 5rem;
+      width: min(25rem, 100%);
    }
 }
 </style>

@@ -6,12 +6,13 @@ import Skills from '@/components/Skills/Skills.vue'
 import Qualifications from '@/components/Qualifications/Qualifications.vue'
 import Portfolio from '@/components/Portfolio/Portfolio.vue'
 import ContactMe from '@/components/ContactMe/ContactMe.vue'
+import FooterComponent from '@/components/Footer/Footer.vue'
 import ArrowUpIcon from '@/assets/svgs/ArrowUpIcon.vue'
 import { debounce } from 'lodash'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 let status = ref('home')
-function onScroll(e: any) {
-   const scrollTop = e.target.scrollTop
+function onScroll() {
+   const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop
    const aboutMe = document.getElementById('about')
    const skills = document.getElementById('skills')
    const qualifications = document.getElementById('qualifications')
@@ -52,10 +53,16 @@ function onScroll(e: any) {
    }
 }
 const onScrollDebounce = debounce(onScroll, 100)
+onMounted(() => {
+   window.addEventListener('scroll', onScrollDebounce)
+})
+onUnmounted(() => {
+   window.removeEventListener('scroll', onScrollDebounce)
+})
 </script>
 
 <template>
-   <main class="main-view" @scroll="onScrollDebounce">
+   <main class="main-view">
       <NavBar @changeStatus="status = $event" :status="status" />
       <Profile />
       <AboutMe />
@@ -66,29 +73,34 @@ const onScrollDebounce = debounce(onScroll, 100)
       <a class="go-top" v-if="status !== 'home'" href="#home">
          <ArrowUpIcon style="fill: #fff" />
       </a>
+      <div class="footer">
+         <FooterComponent />
+      </div>
    </main>
 </template>
 
 <style lang="less" scoped>
+.full-height-wrapper {
+   min-height: 100svh;
+   display: flex;
+}
 .main-view {
-   scroll-behavior: smooth;
-   box-sizing: border-box;
-   max-width: 1700px;
-   overflow-y: scroll;
-   height: 100svh;
-   padding: 5rem 2rem 0 2rem;
-   padding-top: 0;
+   padding-top: 5rem;
+   max-width: 106.25rem;
    width: 100%;
    min-width: 350px;
    position: relative;
+   .footer {
+      margin-top: 2rem;
+   }
 }
 .go-top {
    font-size: 1.2rem;
-   position: sticky;
+   position: fixed;
    bottom: 5rem;
-   margin-left: auto;
-   margin-right: 1.8rem;
-   z-index: 100;
+   right: 2rem;
+   bottom: 6rem;
+   z-index: 99;
    background-color: var(--first-color);
    color: var(--text-color-light);
    border-radius: 0.3rem;
@@ -103,16 +115,16 @@ const onScrollDebounce = debounce(onScroll, 100)
       background-color: var(--first-color-lighter);
    }
 }
-
-@media screen and (width < 45em) {
+@media screen and (max-width: 48em) {
    .main-view {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-top: 0;
+      padding-bottom: 4rem;
    }
 }
-@media screen and (width >= 75em) {
+@media screen and (min-width: 75em) {
    .main-view {
-      padding: 0 10rem;
+      padding-left: 10rem;
+      padding-right: 10rem;
    }
 }
 </style>

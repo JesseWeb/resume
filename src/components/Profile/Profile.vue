@@ -1,20 +1,27 @@
 <script setup lang="ts">
 import GithubIcon from '@/assets/svgs/GithubIcon.vue'
+import BlogIcon from '@/assets/svgs/BlogIcon.vue'
 import ContactIcon from '@/assets/svgs/ContactIcon.vue'
 import MouseIcon from '@/assets/svgs/MouseIcon.vue'
 import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
 </script>
 <template>
    <div class="container" id="home">
-      <a class="wrapper-links" target="_blank" href="//github.com/jesseweb">
-         <GithubIcon class="icon-github" />
-      </a>
+      <div class="wrapper-links">
+         <a class="link" target="_blank" href="//github.com/jesseweb">
+            <GithubIcon class="icon-github" />
+         </a>
+         <a class="link" target="_blank" href="//jesseweb.github.io">
+            <BlogIcon class="icon-github" />
+         </a>
+      </div>
+
       <div class="wrapper-content">
          <div class="content">
             <div class="title">{{ $t(`hi`) }}</div>
             <div class="sub-title">{{ $t(`frontendDeveloper`) }}</div>
             <div class="desc">{{ $t('selfIntroduction') }}</div>
-            <a class="btn-primary" href="mailto:legendaryjesse@icloud.com">
+            <a class="btn-primary" href="mailto:plunges_graham0h@icloud.com">
                <div class="text">{{ $t('contactMe') }}</div>
                <ContactIcon style="fill: #fff" />
             </a>
@@ -33,31 +40,28 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
 
 <style lang="less" scoped>
 .container {
-   height: calc(100svh);
-   padding-left: 3.5rem;
+   padding-top: 5rem;
    width: 100%;
    background-color: var(--container-color);
    position: relative;
    display: flex;
    align-items: center;
    flex-direction: column;
-   padding-top: 5rem;
    .wrapper-links {
-      padding: 0.1rem;
       cursor: pointer;
       position: absolute;
-      left: 0.05rem;
+      left: 2rem;
       top: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       border-radius: 50%;
       &:hover {
-         .icon-github {
+         .icon {
             fill: var(--first-color-alt);
          }
       }
-      .icon-github {
+      .icon {
          // color: var(--first-color);
          font-size: 1.5rem;
          cursor: pointer;
@@ -76,7 +80,7 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       align-items: center;
       .profile-img {
          border-radius: 60% 60% 60% 80%;
-         width: 10rem;
+         width: clamp(14rem, 28vw, 18rem);
          aspect-ratio: 397/425;
          background-color: var(--first-color);
       }
@@ -104,27 +108,23 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       color: var(--text-color);
    }
 }
-@media screen and (width >=75em) {
+@media screen and (min-width: 75em) {
    .container {
       .scroll-down {
          display: flex;
       }
    }
-   .container .wrapper-links {
-      left: -4rem;
-   }
-   .container .profile .profile-img {
-      width: 18rem;
+   // .container .profile .profile-img {
+   //    width: 18rem;
+   // }
+}
+@media screen and (min-width: 35.5em) {
+   .container {
+      padding-left: 5rem;
    }
 }
-@media screen and (width >= 35.5em) {
+@media screen and (max-width: 35.5em) {
    .container {
-      padding-top: 10rem;
-   }
-}
-@media screen and (width < 35.5em) {
-   .container {
-      padding-left: 0;
       .wrapper-content {
          gap: 2rem;
          grid-template-columns: 1fr;
