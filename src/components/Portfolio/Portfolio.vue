@@ -10,18 +10,15 @@ const slides = [
       demoUrl: ''
    },
    {
-      img: '',
-      title: '小程序b',
-      desc: '',
-      demoUrl: ''
-   },
-   {
-      img: '',
-      title: '小程序c',
-      desc: '',
+      img: '/src/assets/imgs/mlbs_logo.png',
+      title: '魅力宝水',
+      desc: '2024年宝安区水务局水务宣传小程序',
       demoUrl: ''
    }
 ]
+function checkDemo(index: number) {
+   var myWindow = window.open(`/qrcode?index=${index}`, 'MsgWindow', 'width=400,height=200')
+}
 </script>
 <template>
    <div id="portfolio" class="container">
@@ -61,7 +58,7 @@ const slides = [
                <div class="right">
                   <div class="title">{{ slide.title }}</div>
                   <div class="desc">{{ slide.desc }}</div>
-                  <a class="btn-primary">
+                  <a class="btn-primary" @click="checkDemo(i)">
                      <div class="text">Demo</div>
                      <ContactIcon style="fill: #fff" />
                   </a>

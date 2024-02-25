@@ -48,7 +48,6 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
    align-items: center;
    flex-direction: column;
    .wrapper-links {
-      cursor: pointer;
       position: absolute;
       left: 2rem;
       top: 5rem;
@@ -56,16 +55,16 @@ import ArrowDonwIcon from '@/assets/svgs/ArrowDownIcon.vue'
       flex-direction: column;
       justify-content: space-around;
       border-radius: 50%;
-      &:hover {
-         .icon {
-            fill: var(--first-color-alt);
-         }
-      }
+
       .icon {
          // color: var(--first-color);
          font-size: 1.5rem;
          cursor: pointer;
          fill: var(--first-color);
+         &:hover {
+            fill: var(--first-color-alt);
+            cursor: pointer;
+         }
       }
    }
    .wrapper-content {
